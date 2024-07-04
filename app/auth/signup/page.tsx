@@ -1,11 +1,36 @@
-import React from 'react'
+import { Button, Link, Stack, TextField } from "@mui/material";
 
-type Props = {}
+import NextLink from "next/link";
+import React from "react";
+
+type Props = {};
 
 function Signup({}: Props) {
 	return (
-		<div>Signup</div>
-	)
+		<Stack
+			spacing={2}
+			className="w-full max-w-xs"
+		>
+			<TextField
+				label="Email"
+				variant="outlined"
+				type="email"
+			/>
+			<TextField
+				label="Password"
+				variant="outlined"
+				type="password"
+			/>
+			<Button variant="contained">Sign Up</Button>
+			<Link
+				component={NextLink}
+				href="/auth/login"
+				className="self-center"
+			>
+				Login
+			</Link>
+		</Stack>
+	);
 }
 
-export default Signup
+export default Signup;
